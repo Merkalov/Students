@@ -14,7 +14,6 @@
 
 Дамп базы данных лежит в папке /config<br>
 Ссылка на задачу: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
-Использовался  фреймворк для работы с БД - _Medoo_. <https://medoo.in><br>
 
 
 
@@ -36,5 +35,4 @@ Using
 
 Damp database in folder /config<br>
 Link to task: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
-Used Framework - _Medoo_. <https://medoo.in><br>
 
