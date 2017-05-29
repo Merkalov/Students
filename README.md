@@ -10,14 +10,11 @@
 2. Неймспейсы
 3. Автоподключение классов через компосер
 4. Фреймворк для работы с БД - _Medoo_. <https://medoo.in>
-5. PHP 5.4
+5. PHP 5.5
 
 Дамп базы данных лежит в папке /config<br>
 Ссылка на задачу: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
-<<<<<<< HEAD
 Использовался  фреймворк для работы с БД - _Medoo_. <https://medoo.in><br>
-Версия PHP 5.5
-=======
 
 
 
@@ -35,12 +32,9 @@ Using
 2. Namespacec
 3. Autoloading classes on composer
 4. Framework - _Medoo_. <https://medoo.in><br>
-5. PHP 5.4
+5. PHP 5.5
 
 Damp database in folder /config<br>
 Link to task: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
-<<<<<<< HEAD
 Used Framework - _Medoo_. <https://medoo.in><br>
-Verion PHP 5.5
-=======
 
