@@ -1,7 +1,7 @@
 <?php
 
 namespace Models;
-
+aaaaa;
 class Auth
 {
     public static function login()
