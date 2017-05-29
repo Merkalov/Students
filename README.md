@@ -6,7 +6,7 @@
 Дамп базы данных лежит в папке /config<br>
 Ссылка на задачу: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
 Использовался  фреймворк для работы с БД - _Medoo_. <https://medoo.in><br>
-Версия PHP 5.4
+Версия PHP 5.5
 
 
 
@@ -20,4 +20,4 @@ Use MySQL database with two tables: data for authorization and information about
 Damp database in folder /config<br>
 Link to task: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
 Used Framework - _Medoo_. <https://medoo.in><br>
-Verion PHP 5.4
+Verion PHP 5.5
