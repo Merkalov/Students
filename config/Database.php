@@ -11,7 +11,7 @@ class Database
             'database_name' => 'students',
             'server' => 'localhost',
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
             'charset' => 'utf8'
             ]
         );
