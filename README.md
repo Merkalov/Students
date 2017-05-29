@@ -6,7 +6,7 @@ After registration, you can add information about yourself and after you browse 
 
 Use MySQL database with two tables: data for authorization and information about students.
 Damp database in folder /config
-Used PHP 5.4.
+Used PHP 5.4
 
 Учебный проект.
 Реализована авторизация(регистрация и вход в уч. запись), используются куки(ставятся на 10 лет).
