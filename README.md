@@ -5,7 +5,7 @@
 После регистрации вы можете добавить информации о себе и после просмотреть список студентов, реализован поиск по всем колонкам таблицы.<br>
 Дамп базы данных лежит в папке /config<br>
 Ссылка на задачу: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
-Использовался  фреймворк для работы с БД - _Medoo_.<br>
+Использовался  фреймворк для работы с БД - _Medoo_. <https://medoo.in><br>
 Версия PHP 5.4
 
 
@@ -19,5 +19,5 @@ After registration, you can add information about yourself and after you browse 
 Use MySQL database with two tables: data for authorization and information about students.<br>
 Damp database in folder /config<br>
 Link to task: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
-Used Framework - _Medoo_.<br>
+Used Framework - _Medoo_. <https://medoo.in><br>
 Verion PHP 5.4
