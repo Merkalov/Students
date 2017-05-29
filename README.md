@@ -18,8 +18,8 @@ Authorization (registration and login) is implemented, using Cookies (put on for
 After registration, you can add information about yourself and after you browse through the list of students, as well as a search for all the columns of the table.
 
 Use MySQL database with two tables: data for authorization and information about students.<br>
-Damp database in folder /config<br>
 Using pattern MVC, FrontController, namespaces, autoloading classes on composer, point of entry index.php.<br>
+Damp database in folder /config<br>
 Link to task: <https://github.com/codedokode/pasta/blob/master/student-list.md><br>
 Used Framework - _Medoo_. <https://medoo.in><br>
 Verion PHP 5.4
