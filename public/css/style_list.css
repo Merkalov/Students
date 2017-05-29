@@ -1,0 +1,161 @@
+@font-face {
+    font-family: Open Sans;
+    src: url(../fonts/open_sans.ttf);
+}
+#header1{
+    height: 40px;
+    position: absolute;
+    background-color: #F7F7F7;
+    box-shadow: 1px 1px 5px grey;
+    color: black;
+    font-family: Open Sans;
+    min-width: 630px;
+    min-height: 40px;
+    top: 25px;
+    left: 31%;
+    white-space: nowrap;
+    padding: 0pt;
+}
+#headlabel{
+    margin-left: 10px;
+    margin-top: 8px;
+    font-family: Open Sans;
+    display:inline;
+    text-align: left;
+    width: 150px;
+    height: 25px;
+    float: left;
+}
+#label1{
+    float:left;
+    padding-top: 8px;
+    font-size: 15pt;
+}
+.exit{
+    display: inline;
+    margin: 5px 10px 0px 0px;
+    padding: 3px;
+    width: 130px;
+    height: 30px;
+    font-size: 12pt;
+    text-align: center;
+    color: #F0F8FF;
+    border-radius: 4px;
+    background-color: #CC0033;
+    border: none;
+    float: right;
+}
+.exit:hover{
+    background-color: #990000;
+}
+
+.profile{
+    color: #F0F8FF;
+    border-radius: 4px;
+    background-color: #4B8DF8;
+
+}
+.profile:hover{
+    background-color: #4185F3;
+}
+#search{
+    height: 40px;
+    position: absolute;
+    color: black;
+    font-family: Open Sans;
+    min-width: 643px;
+    min-height: 40px;
+    top: 100px;
+    left: 31%;
+    white-space: nowrap;
+    padding: 0pt;
+}
+.searchInput{
+    display: inline;
+    float:right;
+    width: 190px;
+    font-family: Open Sans;
+    padding: 5px;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.found{
+    display: inline;
+    margin: 5px 10px 0px 0px;
+    padding: 3px;
+    width: 60px;
+    height: 30px;
+    font-size: 12pt;
+    text-align: center;
+    color: #F0F8FF;
+    border-radius: 4px;
+    background-color: #999999;
+    border: none;
+    float: right;
+}
+.found:hover{
+    background-color: #666666;
+}
+
+#main{
+    height: 470px;
+    background-color: #F7F7F7;
+    box-shadow: 1px 1px 5px grey;
+    min-width: 600px;
+    min-height: 585px;
+    position: absolute;
+    top: 150px;
+    left: 31%;
+    padding: 10px;
+}
+
+.inputs{
+    font-family: Open Sans;
+    margin-top: 10px;
+    margin-left: 55px;
+    padding: 10px;
+    width: 200px;
+    height: 10px
+
+}
+table{
+    background: black; /* Цвет фона таблицы */
+    border: 2px;
+    color: black;
+    border-left: 40px;
+
+}
+th, td, tr{
+    background: #F7F7F7; /* Цвет фона ячеек */
+    padding: 2px; /* Поля вокруг текста */
+}
+
+
+.firstStr{
+    background: #CCCCCC;
+}
+.page_str{
+    height: 40px;
+    position: absolute;
+    color: black;
+    font-family: Open Sans;
+    min-width: 870px;
+    min-height: 40px;
+    top: 760px;
+    left: 31%;
+    white-space: nowrap;
+    padding: 0pt;
+}
+.page{
+    text-decoration: none;
+}
+.name, .last_name{
+    height: 30px;
+    width: 180px;
+}
+.number_group, .count_ege{
+    width: 70px;
+}
+.id{
+    width: 30px;
+}
