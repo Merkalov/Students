@@ -20,7 +20,3 @@ use Controllers\FrontController;
 
 $router = new FrontController();
 $router->start();
-
-
-
-
