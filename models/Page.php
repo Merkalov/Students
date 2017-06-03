@@ -22,12 +22,12 @@ class Page
     {
         if (empty($sort) && empty($typeSort)) {
             $typeSort = "desc";
-            return "<a href=\"" . \Url::getHomeUrl() . "/list/{$page}/{$sort}/{$typeSort}\" class = \"page\">$nameSort</a>";
+            return "<a href=\"" . Url::getHomeUrl() . "/list/{$page}/{$sort}/{$typeSort}\" class = \"page\">$nameSort</a>";
         } else {
             if ($typeSort == 'desc')
                 $typeSort = 'asc';
             else $typeSort = 'desc';
-            return "<a href=\"" . \Url::getHomeUrl() . "/list/{$page}/{$sort}/{$typeSort}\" class = \"page\">$nameSort</a>";
+            return "<a href=\"" . Url::getHomeUrl() . "/list/{$page}/{$sort}/{$typeSort}\" class = \"page\">$nameSort</a>";
         }
     }
 
@@ -38,11 +38,11 @@ class Page
 
         if (empty($sort) && empty($typeSort)) {
             for ($i = 1; $i <= $countPage; $i++) {
-                echo "<a href=\"" . \Url::getHomeUrl() . "/list/{$i}\" class = \"page\">[{$i}] </a>";
+                echo "<a href=\"" . Url::getHomeUrl() . "/list/{$i}\" class = \"page\">[{$i}] </a>";
             }
         } else
             for ($i = 1; $i <= $countPage; $i++) {
-                echo "<a href=\"" . \Url::getHomeUrl() . "/list/{$i}/{$sort}/{$typeSort}\" class = \"page\">[{$i}] </a>";
+                echo "<a href=\"" . Url::getHomeUrl() . "/list/{$i}/{$sort}/{$typeSort}\" class = \"page\">[{$i}] </a>";
             }
     }
 }
