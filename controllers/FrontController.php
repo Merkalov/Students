@@ -2,8 +2,6 @@
 
 namespace Controllers;
 
-use Models\Page;
-
 Class FrontController
 {
     private $routes;  //маршруты
