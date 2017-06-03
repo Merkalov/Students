@@ -42,10 +42,10 @@ Class AuthController
             $err = Helper::validationRegForm();
             if (!empty($err)) {
                 $_SESSION['err'] = $err;
-                header('location: /error');
+                FrontController::_redirect('error', 301);
             } else {
                 Auth::register();
-                header('Location: /myinfo/edit');
+                FrontController::_redirect('myinfo/edit', 301);
             }
         }
         ob_end_flush();

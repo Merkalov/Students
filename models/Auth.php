@@ -21,7 +21,7 @@ class Auth
 
         $err = [];
 
-        if (empty($str))
+        if (empty($passInDb))
             $err[] = 'Данного имейла не сущевствует';
         elseif (password_verify($pass, $passInDb)) //сравнили пароли
             Cookie::createCookie();
