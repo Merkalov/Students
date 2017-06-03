@@ -12,23 +12,22 @@ Class AuthController
     {
         ob_start();
         if (Cookie::checkCookie())
-            header('Location: /myinfo');
+            FrontController::_redirect('myinfo', 301);
         else {
-            require_once(ROOT . '\views\login_form.php'); //загружаем шаблон страницы
+            echo FrontController::_render('login_form', []);//загружаем шаблон страницы, параметрами передаём пустой массив
             if (isset($_POST['login'])) {    //Кнопка нажата -> делаем
-
                 $err = [];
                 $err = Helper::validationLoginForm(); //запускаем проверки
                 if (!empty($err)) {
                     $_SESSION['err'] = $err;
-                    header('location: /error');
+                    FrontController::_redirect('error', 301);
                 }
                 $err = Auth::login();  //Заходим
                 if (empty($err))
-                    header('Location: /myinfo');
+                    FrontController::_redirect('myinfo', 301);
                 else {
                     $_SESSION['err'] = $err;
-                    header('location: /error');
+                    FrontController::_redirect('error', 301);
                 }
             }
         }

@@ -100,7 +100,7 @@ class InfoController
 
             if (isset($_POST['found'])) {
                 $search_query = $_POST['search'];
-                $search_query = Helper::filtrationEnterQuery($search_query);
+                $search_query = Helper::filtrationEnterData($search_query);
                 $search_query = Helper::registerAlignment($search_query);
                 $search_query = urlencode($search_query);
                 FrontController::_redirect("list/search/{$search_query}", 301);
@@ -153,7 +153,7 @@ class InfoController
 
             if (isset($_POST['found'])) {
                 $search_query = $_POST['search'];
-                $search_query = Helper::filtrationEnterQuery($search_query);
+                $search_query = Helper::filtrationEnterData($search_query);
                 $search_query = Helper::registerAlignment($search_query);
                 $search_query = urlencode($search_query);
                 FrontController::_redirect("list/search/{$search_query}", 301);
