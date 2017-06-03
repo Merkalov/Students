@@ -8,7 +8,7 @@ class Helper
         $database = \Database::connectDb();
         $err = [];
 
-        $email = Helper::filtrationEnterData('email');
+        $email = Helper::filtrationEnterData($_POST['email']);
         if (empty($email))
             $err[] = 'Поле Email не может быть пустым!';
         elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -24,13 +24,13 @@ class Helper
         if (!empty($row))
             $err[] = 'К сожалению email: <b>' . $email . '</b> уже зарегистрирован!<br>';
 
-        $password = Helper::filtrationEnterData('pass');
+        $password = Helper::filtrationEnterData($_POST['pass']);
         if (empty($password))
             $err[] = 'Поле Пароль не может быть пустым';
         elseif (strlen($password) > 20)
             $err = 'Пароль не может содержать больше 20 знаков';
 
-        $password2 = Helper::filtrationEnterData('pass2');
+        $password2 = Helper::filtrationEnterData($_POST['pass2']);
         if (empty($password2))
             $err[] = 'Поле подтверждения пароля не может быть пустым';
         elseif (strlen($password) > 20)
@@ -46,7 +46,7 @@ class Helper
     {
         $database = \Database::connectDb();
         $err = [];
-        $email = Helper::filtrationEnterData('email');
+        $email = Helper::filtrationEnterData($_POST['email']);
         if (empty($email))
             $err[] = 'Поле Email не может быть пустым!';
         elseif (filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -54,7 +54,7 @@ class Helper
         elseif (strlen($email) > 30)
             $err = 'Email не может содержать больше 30 знаков';
 
-        $password = Helper::filtrationEnterData('pass');
+        $password = Helper::filtrationEnterData($_POST['pass']);
         if (empty($password))
             $err[] = 'Поле Пароль не может быть пустым';
         elseif (strlen($password) > 20)
@@ -77,7 +77,7 @@ class Helper
     {
         $err = [];
 
-        $name = Helper::filtrationEnterData('name');
+        $name = Helper::filtrationEnterData($_POST['name']);
         $name = Helper::registerAlignment($name);
         if (empty($name))
             $err[] = 'Поле имя не может быть пустым';
@@ -89,7 +89,7 @@ class Helper
             $err[] = 'Поле имя не может содержать цифры или иные символы отличие от кирилицы.';
 
 
-        $last_name = Helper::filtrationEnterData('last_name');
+        $last_name = Helper::filtrationEnterData($_POST['last_name']);
         $last_name = Helper::registerAlignment($last_name);
         if (empty($last_name))
             $err[] = 'Поле фамилия не может быть пустым';
@@ -103,7 +103,7 @@ class Helper
         if (empty($_POST['gender']))
             $err[] = 'Выберите пол';
 
-        $number_group = Helper::filtrationEnterData('number_group');
+        $number_group = Helper::filtrationEnterData($_POST['number_group']);
         $number_group = mb_strtolower($number_group, 'utf-8');
         if (empty($number_group))
             $err[] = 'Поле "Номер группы" не может быть пустым!';
@@ -112,7 +112,7 @@ class Helper
         elseif (mb_strlen($number_group, 'utf-8') < 2 && mb_strlen($number_group, 'utf-8') > 5)
             $err[] = 'Номер группы должен содержать от 2 до 5 символов';
 
-        $email = Helper::filtrationEnterData('email');
+        $email = Helper::filtrationEnterData($_POST['email']);
         $email = mb_strtolower($email, 'utf-8');
         if (empty($email))
             $err[] = 'Поле Email не может быть пустым!';
@@ -121,7 +121,7 @@ class Helper
         elseif (strlen($email) > 30)
             $err = 'Email не может содержать больше 30 знаков';
 
-        $count_ege = Helper::filtrationEnterData('count_ege');
+        $count_ege = Helper::filtrationEnterData($_POST['count_ege']);
         if (empty($count_ege))
             $err[] = 'Поле "кол-во баллов по ЕГЭ" не может быть пустым!';
         elseif (!preg_match('~[0-9]+~', $count_ege))
@@ -131,7 +131,7 @@ class Helper
         elseif ($count_ege < 0)
             $err[] = 'Не верно указано кол-во баллов по ЕГЭ. Введено значение меньше нуля.';
 
-        $year_of_birth = Helper::filtrationEnterData('year_of_birth');
+        $year_of_birth = Helper::filtrationEnterData($_POST['year_of_birth']);
         if (!preg_match('~[0-9]{4}~', $year_of_birth))
             $err[] = 'Не вверно введен год рождения.';
 
@@ -158,7 +158,7 @@ class Helper
 
     public static function filtrationEnterData($data)
     {
-        $data = trim($_POST[$data]);
+        $data = trim($data);
         $data = strip_tags($data);
         $data = htmlspecialchars($data);
         return $data;
@@ -169,13 +169,5 @@ class Helper
         $data = mb_strtolower($data, 'utf-8');
         $data = mb_convert_case($data, MB_CASE_TITLE, "UTF-8");  //ucfirst
         return $data;
-    }
-
-    public static function filtrationEnterQuery($search_query)
-    {
-        $search_query = trim($search_query);
-        $search_query = strip_tags($search_query);
-        $search_query = htmlspecialchars($search_query);
-        return $search_query;
     }
 }
