@@ -1,6 +1,7 @@
 <?php
 
 namespace Controllers;
+use Models\Url;
 
 Class FrontController
 {
