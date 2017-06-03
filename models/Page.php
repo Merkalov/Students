@@ -7,7 +7,7 @@ class Page
 
 //посчитать сколько страниц со студентами сгенерировать.
 // Считаем кол-во записей, делим на 15(15 записей на страницу), есть остаток-> прибавляем ещё страницу.
-    public function countPage()
+    public static function countPage()
     {
         $database = \Database::connectDb();
         $count_students = $database->count('info');
@@ -18,7 +18,7 @@ class Page
         return $countPage;
     }
 
-    public function getLinkSort($page, $typeSort, $sort, $nameSort)
+    public static function getLinkSort($page, $typeSort, $sort, $nameSort)
     {
         if (empty($sort) && empty($typeSort)) {
             $typeSort = "desc";
@@ -31,10 +31,10 @@ class Page
         }
     }
 
-    public function printLinkPage($sort, $typeSort)  //НЕ РЕТЮРНИМ, потому что вывод в цикле, пусть цикл будет здесь, а не в шаблоне.
+    public static function printLinkPage($sort, $typeSort)  //НЕ РЕТЮРНИМ, потому что вывод в цикле, пусть цикл будет здесь, а не в шаблоне.
     {
         $countPage = 0;
-        $countPage = $this->countPage();
+        $countPage = Page::countPage();
 
         if (empty($sort) && empty($typeSort)) {
             for ($i = 1; $i <= $countPage; $i++) {
@@ -44,5 +44,8 @@ class Page
             for ($i = 1; $i <= $countPage; $i++) {
                 echo "<a href=\"http://Students/list/{$i}/{$sort}/{$typeSort}\" class = \"page\">[{$i}] </a>";
             }
+    }
+    public static function getHomeUrl(){
+        return 'http://'.$_SERVER['SERVER_NAME'].'';
     }
 }
