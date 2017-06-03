@@ -1,6 +1,7 @@
 <?php
 
 namespace Models;
+
 class Student
 {
     public function addInfo()
