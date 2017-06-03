@@ -66,7 +66,7 @@ Class FrontController
                 break; //строка найдена, объект создан, экшен запущен, прекращаем работу цикла.
 
             } elseif ($total == $counter) {  //если строка запроса не найдена и это последний эллемент массива путей, то 404
-                header('Location: /404');
+                FrontController::_redirect('404', 302);
                 break;
             }
         }
