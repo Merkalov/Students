@@ -17,7 +17,6 @@ Class FrontController
     {
         ob_start();
         extract($params, EXTR_SKIP);
-
         include (ROOT.'/views/'.$template.'.php');
         $ret = ob_get_contents();
         ob_end_clean();
