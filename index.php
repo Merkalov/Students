@@ -14,6 +14,8 @@ require_once(ROOT . '\vendor\autoload.php');
 
 //Подключение файла конфига БД
 require_once (ROOT. '\config\Database.php');
+//Конфиг с url
+require_once (ROOT. '\config\Url.php');
 
 //Вызов FrontController
 use Controllers\FrontController;
