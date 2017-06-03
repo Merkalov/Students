@@ -57,7 +57,8 @@ END;
 </div>
 <div class="page_str">
     <?php
-        echo "<a href='http://students/list' class = \"page\">[Вернуться к списку студентов]</a>";
+        echo \Url::getHomeUrl();
+       // echo "<a href='".Url::getHomeUrl()."/list' class = \"page\">[Вернуться к списку студентов]</a>";
     ?>
 </div>
 </body>

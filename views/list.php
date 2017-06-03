@@ -29,10 +29,10 @@
     <table>
         <tr>
             <td class="firstStr">№</td>
-            <td class="firstStr"><?php echo  $this->page->getLinkSort($page, $typeSort, 'name', 'Имя'); ?> </td>
-            <td class="firstStr"><?php echo  $this->page->getLinkSort($page, $typeSort, 'last_name', 'Фамилия'); ?> </td>
-            <td class="firstStr"><?php echo  $this->page->getLinkSort($page, $typeSort, 'number_group', 'Номер группы'); ?> </td>
-            <td class="firstStr"><?php echo  $this->page->getLinkSort($page, $typeSort, 'count_ege', 'Число баллов'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'name', 'Имя'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'last_name', 'Фамилия'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'number_group', 'Номер группы'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'count_ege', 'Число баллов'); ?> </td>
         </tr>
     <?php
     $i = $start_limit;
@@ -53,7 +53,7 @@ END;
 </div>
 <div class="page_str">
     <?php
-        $this->page->printLinkPage($sort, $typeSort);
+    \Models\Page::printLinkPage($sort, $typeSort);
     ?>
 </div>
 </body>
