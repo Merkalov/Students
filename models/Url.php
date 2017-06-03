@@ -1,5 +1,5 @@
 <?php
-
+namespace Models;
 class Url
 {
     public static function getHomeUrl(){
