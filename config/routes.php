@@ -15,11 +15,11 @@ return array(
     '^list\/([0-9]+)\/([a-zA-Z=_]+)$' => 'Info/List/$1/$2',
     '^list\/([0-9]+)\/([a-zA-Z=_]+)/(asc|desc)$' => 'Info/List/$1/$2/$3',
     '^list$' => 'Info/List/1', //При открытии просто /list открывается /list/1, первая страница списка.
-    '^list\/search\/([\w%]+)$' => 'Info/Search/$1',
+    '^list\/search\/([\+\w%]+)$' => 'Info/Search/$1',
     '^list/search$' => 'Info/Search',
 
     //Error, NoAccess, 404
     '^error$' => 'Errors/ShowErrors',
-    '^noaccess$' => 'Errors/NoAccess', //нет доступа
+    '^noaccess$' => 'Errors/NoAccess',
     '^404$'=> 'Errors/NotFound'
 );
