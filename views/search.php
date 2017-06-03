@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Список студентов</title>
-    <link href="http://students/public/css/style_list.css" rel="stylesheet" type="text/css">
+    <link href="../public/css/style_list.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--<header>Список студентов</header>-->
@@ -57,8 +57,7 @@ END;
 </div>
 <div class="page_str">
     <?php
-        echo \Url::getHomeUrl();
-       // echo "<a href='".Url::getHomeUrl()."/list' class = \"page\">[Вернуться к списку студентов]</a>";
+       echo "<a href='".Models\Url::getHomeUrl()."/list' class = \"page\">[Вернуться к списку студентов]</a>";
     ?>
 </div>
 </body>
