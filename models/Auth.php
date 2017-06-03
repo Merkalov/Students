@@ -7,24 +7,23 @@ class Auth
     public static function login()
     {
         $database = \Database::connectDb();
-        $email = $_POST['email'];
-        Helper::filtrationEnterQuery('email');
-        $pass = $_POST["pass"];
-        Helper::filtrationEnterQuery('pass');
+        $email = Helper::filtrationEnterData($_POST['email']);
+        $pass = Helper::filtrationEnterData($_POST["pass"]);
 
-        $hash = $database->select(
+        $passInDb = $database->select(
             'users',
             ['password'],
             ["email" => $email]
         );
 
-        $str = array_shift($hash); //из двумерного масива $hash вытаскиваем строку
-        $str = array_shift($str); //вытащили строку
+        $passInDb = array_shift($passInDb); //из двумерного масива $passInDb вытаскиваем строку
+        $passInDb = array_shift($passInDb); //вытащили строку
 
         $err = [];
+
         if (empty($str))
             $err[] = 'Данного имейла не сущевствует';
-        elseif (password_verify($pass, $str)) //сравнили пароли
+        elseif (password_verify($pass, $passInDb)) //сравнили пароли
             Cookie::createCookie();
         else $err[] = 'Не верный пароль';
 
