@@ -2,6 +2,8 @@
 
 namespace Controllers;
 
+use Models\Page;
+
 Class FrontController
 {
     private $routes;  //маршруты
@@ -10,6 +12,24 @@ Class FrontController
     {
         $routesPath = ROOT . '/config/routes.php';
         $this->routes = include($routesPath);
+    }
+
+    public static function _render($template, $params = [])
+    {
+        ob_start();
+        extract($params, EXTR_SKIP);
+
+        include (ROOT.'/views/'.$template.'.php');
+        $ret = ob_get_contents();
+        ob_end_clean();
+        return $ret;
+    }
+
+    public static function _redirect($url, $status){
+        ob_start();
+        header("Location: /{$url}");
+        header("HTTP/1.0 {$status}");
+        ob_end_flush();
     }
 
     private function getURI()
@@ -32,8 +52,8 @@ Class FrontController
         //Проверить наличие такого маршрута в routes.php
         foreach ($this->routes as $uriPattern => $path) {
             $counter++;
-            if (preg_match("~$uriPattern~", $uri)) {  //Если шаблон найден в строке запроса. строка запроса имеет известное имя, то
-                $editedPath = preg_replace("~$uriPattern~", $path, $uri);
+            if (preg_match("~$uriPattern~ui", $uri)) {  //Если шаблон найден в строке запроса. строка запроса имеет известное имя, то
+                $editedPath = preg_replace("~$uriPattern~ui", $path, $uri);
                 $segments = explode('/', $editedPath);    //разделяем
 
                 $controllerName = ucfirst(array_shift($segments)) . 'Controller'; // Извлекаем первый эллемент массива и добавляем слово контроллер
