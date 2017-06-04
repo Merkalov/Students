@@ -1,7 +1,7 @@
 <?php
 
 namespace Controllers;
-use Models\Errors;
+
 class ErrorsController
 {
     public static function actionShowErrors()
