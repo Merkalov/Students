@@ -8,8 +8,13 @@
 <body>
 <div class="head">
     <?php
-    use Models\Errors;
-    Errors::showErrors($err);
+    if (!empty($err)) {
+        if (!empty($err)) {
+            foreach ($err as $error) {
+                echo $error . "<br>";
+            }
+        }
+    }
     ?>
 </div>
 <div id="container">
