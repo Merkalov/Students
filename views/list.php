@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Список студентов</title>
-    <link href="../public/css/style_list.css" rel="stylesheet" type="text/css">
+    <link href="/../public/css/style_list.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--<header>Список студентов</header>-->
 <div id="header1">
     <label id="headlabel">
         <?php
-            echo "{$user_name['name']} {$user_name['last_name']}";
+            echo "{$userName['name']} {$userName['surname']}";
         ?>
     </label>
     <form name="test" action="" method="Post">
@@ -30,21 +30,21 @@
         <tr>
             <td class="firstStr">№</td>
             <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'name', 'Имя'); ?> </td>
-            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'last_name', 'Фамилия'); ?> </td>
-            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'number_group', 'Номер группы'); ?> </td>
-            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'count_ege', 'Число баллов'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'surname', 'Фамилия'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'numberGroup', 'Номер группы'); ?> </td>
+            <td class="firstStr"><?php echo  \Models\Page::getLinkSort($page, $typeSort, 'countEge', 'Число баллов'); ?> </td>
         </tr>
     <?php
-    $i = $start_limit;
-    foreach ($info_users as $user){
+    $i = $startLimit;
+    foreach ($infoStudents as $user){
             $i++;
             echo <<<END
               <tr>
                 <td class="id">{$i}</td>
                 <td class="name">{$user['name']}</td>
-                <td class="last_name">{$user['last_name']}</td>
-                <td class="number_group">{$user['number_group']}</td>
-                <td class="count_ege">{$user['count_ege']}</td>
+                <td class="surname">{$user['surname']}</td>
+                <td class="numberGroup">{$user['numberGroup']}</td>
+                <td class="countEge">{$user['countEge']}</td>
             </tr>
 END;
     }

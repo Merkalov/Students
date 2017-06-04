@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>404</title>
-    <link href='../public/css/style_no_access.css' rel="stylesheet" type="text/css">
+    <link href='/../public/css/style_no_access.css' rel="stylesheet" type="text/css">
 </head>
 <body>
 <label id = "labelOne">У вас нет прав для просмотра этой страницы. </label>

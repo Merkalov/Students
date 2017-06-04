@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS</title>
-    <link href='../public/css/style_error.css' rel="stylesheet" type="text/css">
+    <link href='/../public/css/style_error.css' rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="head">

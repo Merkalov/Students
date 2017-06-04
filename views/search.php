@@ -3,12 +3,12 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Список студентов</title>
-    <link href="../public/css/style_list.css" rel="stylesheet" type="text/css">
+    <link href="/../public/css/style_list.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--<header>Список студентов</header>-->
 <div id="header1">
-    <label id="headlabel"><?php echo "{$user_name['name']} {$user_name['last_name']}"; ?></label>
+    <label id="headlabel"><?php echo "{$userName['name']} {$userName['surname']}"; ?></label>
     <form name="test" action="" method="Post">
         <input class = "exit" type="submit" name="exit" value="Выйти">
         <input class = "exit profile" type="submit" name="profile" value="Профиль">
@@ -31,18 +31,18 @@
             <td class="firstStr">Число баллов</td>
         </tr>
         <?php
-        if (!empty($found_id_students)){
+        if (!empty($foundIdStudents)){
         $i = 0;
-            foreach ($info_users as $user){
+            foreach ($infoStudents as $user){
                 $i++;
             foreach ($user as $student){
                 echo <<<END
                   <tr>
                     <td class="id">{$i}</td>
                     <td class="name">{$student['name']}</td>
-                    <td class="last_name">{$student['last_name']}</td>
-                    <td class="number_group">{$student['number_group']}</td>
-                    <td class="count_ege">{$student['count_ege']}</td>
+                    <td class="surname">{$student['surname']}</td>
+                    <td class="numberGroup">{$student['numberGroup']}</td>
+                    <td class="countEge">{$student['countEge']}</td>
                 </tr>
 END;
         }
@@ -51,7 +51,7 @@ END;
         ?>
     </table>
     <?php
-        if (empty($found_id_students))
+        if (empty($foundIdStudents))
             echo "<br> Ничего не найдено.";
     ?>
 </div>
