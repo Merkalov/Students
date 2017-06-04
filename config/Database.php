@@ -3,18 +3,21 @@
 Use Medoo\Medoo;
 class Database
 {
+    private static $connection;
+
     public static function connectDb()
     {
-        $database = new Medoo(
-            [
-            'database_type' => 'mysql',
-            'database_name' => 'students',
-            'server' => 'localhost',
-            'username' => 'root',
-            'password' => 'root',
-            'charset' => 'utf8'
-            ]
-        );
-        return $database;
+        if (!self::$connection) {
+            self::$connection = new Medoo([
+                'database_type' => 'mysql',
+                'database_name' => 'students',
+                'server' => 'localhost',
+                'username' => 'root',
+                'password' => 'root',
+                'charset' => 'utf8'
+            ]);
+        }
+
+        return self::$connection;
     }
 }
