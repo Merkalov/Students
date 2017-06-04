@@ -30,14 +30,14 @@ USE `students`;
 
 CREATE TABLE `info` (
   `id` int(255) NOT NULL,
-  `user_id` varchar(255) NOT NULL,
+  `userID` varchar(255) NOT NULL,
   `name` text NOT NULL,
-  `last_name` text NOT NULL,
+  `surname` text NOT NULL,
   `gender` varchar(11) NOT NULL,
-  `number_group` varchar(11) NOT NULL,
+  `numberGroup` varchar(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `count_ege` int(11) NOT NULL,
-  `year_of_birth` year(4) NOT NULL,
+  `countEge` int(11) NOT NULL,
+  `yearOfBirth` year(4) NOT NULL,
   `location` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
@@ -45,7 +45,7 @@ CREATE TABLE `info` (
 -- Дамп данных таблицы `info`
 --
 
-INSERT INTO `info` (`id`, `user_id`, `name`, `last_name`, `gender`, `number_group`, `email`, `count_ege`, `year_of_birth`, `location`) VALUES
+INSERT INTO `info` (`id`, `userID`, `name`, `surname`, `gender`, `numberGroup`, `email`, `countEge`, `yearOfBirth`, `location`) VALUES
 (1, '3', 'Андрей', 'Меркалов', 'male', '212', 'email@ru.ru', 166, 1992, 'urban'),
 (2, '4', 'Олег', 'Чуждинова', 'female', '331г', '123123@maui3.ru', 176, 1992, 'urban'),
 (3, '5', 'Светлана', 'Есенина', 'male', '331г', '123123@maui33.ru', 123, 1992, 'urban'),

@@ -89,27 +89,27 @@ class Helper
             $err[] = 'Поле имя не может содержать цифры или иные символы отличие от кирилицы.';
 
 
-        $last_name = Helper::filtrationEnterData($_POST['last_name']);
-        $last_name = Helper::registerAlignment($last_name);
-        if (empty($last_name))
+        $surname = Helper::filtrationEnterData($_POST['surname']);
+        $surname = Helper::registerAlignment($surname);
+        if (empty($surname))
             $err[] = 'Поле фамилия не может быть пустым';
-        elseif (mb_strlen($last_name, 'utf-8') > 20)
+        elseif (mb_strlen($surname, 'utf-8') > 20)
             $err[] = 'Поле фамилия не может содержать больше 20 символов';
-        elseif (preg_match('@[a-zA-Z]@u', $last_name))
+        elseif (preg_match('@[a-zA-Z]@u', $surname))
             $err[] = 'Поле фамилия не может содержать буквы латинского алфавита. Только кирилица';
-        elseif (preg_match('@[0-9]@u', $last_name))
+        elseif (preg_match('@[0-9]@u', $surname))
             $err[] = 'Поле фамилия не может содержать цифры. Только кирилица';
 
         if (empty($_POST['gender']))
             $err[] = 'Выберите пол';
 
-        $number_group = Helper::filtrationEnterData($_POST['number_group']);
-        $number_group = mb_strtolower($number_group, 'utf-8');
-        if (empty($number_group))
+        $numberGroup = Helper::filtrationEnterData($_POST['numberGroup']);
+        $numberGroup = mb_strtolower($numberGroup, 'utf-8');
+        if (empty($numberGroup))
             $err[] = 'Поле "Номер группы" не может быть пустым!';
-        elseif (!preg_match("~([0-9]+)([а-яё]*)~ui", $number_group))
+        elseif (!preg_match("~([0-9]+)([а-яё]*)~ui", $numberGroup))
             $err[] = 'Номер группы должен содержать цифры. Так же может содержать буквы.';
-        elseif (mb_strlen($number_group, 'utf-8') < 2 && mb_strlen($number_group, 'utf-8') > 5)
+        elseif (mb_strlen($numberGroup, 'utf-8') < 2 && mb_strlen($numberGroup, 'utf-8') > 5)
             $err[] = 'Номер группы должен содержать от 2 до 5 символов';
 
         $email = Helper::filtrationEnterData($_POST['email']);
@@ -121,18 +121,18 @@ class Helper
         elseif (strlen($email) > 30)
             $err = 'Email не может содержать больше 30 знаков';
 
-        $count_ege = Helper::filtrationEnterData($_POST['count_ege']);
-        if (empty($count_ege))
+        $countEge = Helper::filtrationEnterData($_POST['countEge']);
+        if (empty($countEge))
             $err[] = 'Поле "кол-во баллов по ЕГЭ" не может быть пустым!';
-        elseif (!preg_match('~[0-9]+~', $count_ege))
+        elseif (!preg_match('~[0-9]+~', $countEge))
             $err[] = 'Поле "кол-во баллов по ЕГЭ" должно содержать только цифры';
-        elseif ($count_ege > 200)
+        elseif ($countEge > 200)
             $err[] = 'Не верно указано кол-во баллов по ЕГЭ. Укажите баллы за 2 обязательных предмета';
-        elseif ($count_ege < 0)
+        elseif ($countEge < 0)
             $err[] = 'Не верно указано кол-во баллов по ЕГЭ. Введено значение меньше нуля.';
 
-        $year_of_birth = Helper::filtrationEnterData($_POST['year_of_birth']);
-        if (!preg_match('~[0-9]{4}~', $year_of_birth))
+        $yearOfBirth = Helper::filtrationEnterData($_POST['yearOfBirth']);
+        if (!preg_match('~[0-9]{4}~', $yearOfBirth))
             $err[] = 'Не вверно введен год рождения.';
 
         if (empty($_POST['location']))
@@ -141,16 +141,16 @@ class Helper
         return $err;
     }
 
-    public static function validationSearchQuery($search_query)
+    public static function validationSearchQuery($searchQuery)
     {
         $err = [];
-        if (empty($search_query))
+        if (empty($searchQuery))
             $err[] = 'Поле Поиск не может быть пустым!';
-        elseif (mb_strlen($search_query, 'utf-8') > 50)
+        elseif (mb_strlen($searchQuery, 'utf-8') > 50)
             $err[] = 'Поле Поиск не может содержать больше 50 символов';
-        elseif (preg_match('~^[\w\+\s]+$~ui', $search_query) == 0) { //а-яёА-ЯЁ
+        elseif (preg_match('~^[\w\+\s]+$~ui', $searchQuery) == 0) { //а-яёА-ЯЁ
             $err[] = 'Поле поиск может содержать только буквы и цифры.';
-        } elseif (preg_match('~\s~', $search_query) == 1)
+        } elseif (preg_match('~\s~', $searchQuery) == 1)
             $err[] = 'Поле поиск может содержать только фамилию, или только имя, или только номер группы, или только число баллов. ';
 
         return $err;

@@ -149,11 +149,11 @@ th, td, tr{
 .page{
     text-decoration: none;
 }
-.name, .last_name{
+.name, .surname{
     height: 30px;
     width: 180px;
 }
-.number_group, .count_ege{
+.numberGroup, .countEge{
     width: 70px;
 }
 .id{

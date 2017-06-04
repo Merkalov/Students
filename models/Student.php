@@ -7,16 +7,16 @@ class Student
     public function addInfo()
     {
         $database = \Database::connectDb();
-        $user_id = $this->foundUserId();
+        $userID = $this->foundUserID();
         $database->insert('info', [
-            'user_id' => $user_id,
+            'userID' => $userID,
             'name' => $_POST['name'],
-            'last_name' => $_POST['last_name'],
+            'surname' => $_POST['surname'],
             'gender' => $_POST['gender'],
-            'number_group' => $_POST['number_group'],
+            'numberGroup' => $_POST['numberGroup'],
             'email' => $_POST['email'],
-            'count_ege' => $_POST['count_ege'],
-            'year_of_birth' => $_POST['year_of_birth'],
+            'countEge' => $_POST['countEge'],
+            'yearOfBirth' => $_POST['yearOfBirth'],
             'location' => $_POST['location'],
         ]);
 
@@ -25,133 +25,133 @@ class Student
     public function updateInfo()
     {
         $database = \Database::connectDb();
-        $user_id = $this->foundUserId();
+        $userID = $this->foundUserID();
         $database->update('info', [
-            'user_id' => $user_id,
+            'userID' => $userID,
             'name' => $_POST['name'],
-            'last_name' => $_POST['last_name'],
+            'surname' => $_POST['surname'],
             'gender' => $_POST['gender'],
-            'number_group' => $_POST['number_group'],
+            'numberGroup' => $_POST['numberGroup'],
             'email' => $_POST['email'],
-            'count_ege' => $_POST['count_ege'],
-            'year_of_birth' => $_POST['year_of_birth'],
+            'countEge' => $_POST['countEge'],
+            'yearOfBirth' => $_POST['yearOfBirth'],
             'location' => $_POST['location'],
         ],
             [
-                'user_id' => $user_id
+                'userID' => $userID
             ]
         );
     }
 
-    public function getInfoThisUserOnID($user_id)
+    public function getInfoThisUserOnID($userID)
     {
         $database = \Database::connectDb();
         $user_info = $database->select('info',
             [
                 'name',
-                'last_name',
+                'surname',
                 'gender',
-                'number_group',
+                'numberGroup',
                 'email',
-                'count_ege',
-                'year_of_birth',
+                'countEge',
+                'yearOfBirth',
                 'location'
             ],
             [
-                'user_id' => $user_id
+                'userID' => $userID
             ]
         );
         return array_shift($user_info);
     }
 
-    public function getInfoSomeStudents($start_limit, $sort, $typeSort)
+    public function getInfoSomeStudents($startLimit, $sort, $typeSort)
     {
         $database = \Database::connectDb();
         if (empty($sort))
-            $sort = 'count_ege';
+            $sort = 'countEge';
         if (empty($typeSort))
             $typeSort = 'desc';
         $typeSort = mb_strtoupper($typeSort);
-        $info_users = [];
-        $info_users = $database->select('info',
+        $infoStudents = [];
+        $infoStudents = $database->select('info',
             [
                 'name',
-                'last_name',
-                'number_group',
-                'count_ege'
+                'surname',
+                'numberGroup',
+                'countEge'
             ],
             [
-                "LIMIT" => [$start_limit, 15],
+                "LIMIT" => [$startLimit, 15],
                 "ORDER" => [$sort => $typeSort]
             ]
         );
-        return $info_users;
+        return $infoStudents;
     }
 
-    public function getInfoOnID($user_id)
+    public function getInfoOnID($userID)
     {
         $database = \Database::connectDb();
-        $info_user = [];
-        $info_user = $database->select('info',
+        $infoUser = [];
+        $infoUser = $database->select('info',
             [
                 'name',
-                'last_name',
-                'number_group',
-                'count_ege'],
+                'surname',
+                'numberGroup',
+                'countEge'],
             [
-                'user_id' => $user_id
+                'userID' => $userID
             ]
         );
-        return $info_user;
+        return $infoUser;
     }
 
-    public function foundUserId()
+    public function foundUserID()
     {
         $database = \Database::connectDb();
-        $user_id = $database->select('users',
+        $userID = $database->select('users',
             ['id'],
             [
                 'hash_cookie' => $_COOKIE['hash_cookie']
             ]
         );
-        $user_id = array_shift($user_id);
-        $user_id = $user_id['id'];
-        return $user_id;
+        $userID = array_shift($userID);
+        $userID = $userID['id'];
+        return $userID;
     }
 
     //Получить полное имя текущего пользователя для вывода в хеадер
-    public function getFullName($user_id)
+    public function getFullName($userID)
     {
         $database = \Database::connectDb();
         $full_name = [];
         $full_name = $database->select('info',
             [
                 'name',
-                'last_name'
+                'surname'
             ],
             [
-                'user_id' => $user_id
+                'userID' => $userID
             ]
         );
         return array_shift($full_name);
     }
 
-    public function searchID($search_query)
+    public function searchID($searchQuery)
     {
         $database = \Database::connectDb();
-        $info_users = [];
-        $user_id = $database->select('info',
-            ['user_id'],
+        $infoStudents = [];
+        $userID = $database->select('info',
+            ['userID'],
             [
                 "OR" => [
-                    "name" => $search_query,
-                    "last_name[REGEXP]" => $search_query,
-                    "number_group" => $search_query,
-                    "count_ege" => $search_query
+                    "name" => $searchQuery,
+                    "surname[REGEXP]" => $searchQuery,
+                    "numberGroup" => $searchQuery,
+                    "countEge" => $searchQuery
                 ]
             ]
         );
-        return $user_id;
+        return $userID;
     }
 
 
