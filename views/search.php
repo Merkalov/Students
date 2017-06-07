@@ -57,7 +57,7 @@ END;
 </div>
 <div class="page_str">
     <?php
-       echo "<a href='".Models\Url::getHomeUrl()."/list' class = \"page\">[Вернуться к списку студентов]</a>";
+       echo "<a href='".$this->url->getHomeUrl()."/list' class = \"page\">[Вернуться к списку студентов]</a>";
     ?>
 </div>
 </body>

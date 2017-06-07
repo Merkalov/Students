@@ -2,6 +2,8 @@
 
 namespace Controllers;
 use Models\Url;
+use Models\Page;
+
 
 Class FrontController
 {
@@ -11,23 +13,6 @@ Class FrontController
     {
         $routesPath = ROOT . '/config/routes.php';
         $this->routes = include($routesPath);
-    }
-
-    public static function _render($template, $params = [])
-    {
-        ob_start();
-        extract($params, EXTR_SKIP);
-        include (ROOT.'/views/'.$template.'.php');
-        $ret = ob_get_contents();
-        ob_end_clean();
-        return $ret;
-    }
-
-    public static function _redirect($url, $status){
-        ob_start();
-        header("Location: /{$url}");
-        header("HTTP/1.0 {$status}");
-        ob_end_flush();
     }
 
     private function getURI()
@@ -65,7 +50,7 @@ Class FrontController
                 break; //строка найдена, объект создан, экшен запущен, прекращаем работу цикла.
 
             } elseif ($total == $counter) {  //если строка запроса не найдена и это последний эллемент массива путей, то 404
-                FrontController::_redirect('404', 302);
+                self::_redirect('404', 302);
                 break;
             }
         }
