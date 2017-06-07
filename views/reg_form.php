@@ -11,8 +11,8 @@
     <div id="image">
         <form name="test" action="" method="POST">
             <input type="text" name="email" placeholder="E-mail"><br>
-            <input type="text" name="pass" placeholder="Пароль"><br>
-            <input type="text" name="pass2" placeholder="Повторите пароль"><br>
+            <input type="password" name="pass" placeholder="Пароль"><br>
+            <input type="password" name="pass2" placeholder="Повторите пароль"><br>
             <input id="submit" type="submit" name="register" value="Регистрация"><br>
             <div class="iHaveAccountBlock">
                 <a class="iHaveAccount" href="login">У меня уже есть аккаунт</a>
