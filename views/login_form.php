@@ -12,7 +12,7 @@
             <img src="../public/images/logo.png" alt="logo">
             <form name="test" action="" method="POST">
                 <input class="inputs" type="text" name="email" placeholder="Email"><br>
-                <input class="inputs" type="text" name="pass" placeholder="Пароль"><br>
+                <input class="inputs" type="password" name="pass" placeholder="Пароль"><br>
                 <input id="submit" type="submit" name="login" value="Войти">
                     <div class="regBlock">
                         <a class="reg" href="register">Регистрация</a>
