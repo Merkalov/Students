@@ -29,7 +29,7 @@
         <input class="inputs" type="text" name="surname" placeholder="Фамилия"
                value="<?php echo $infoUser['surname']?>"><br>
         <select name="gender" required="required">
-            <option style="color:gray" disabled="disabled" selected="selected" value="null">Выбериет пол</option>
+            <option style="color:gray" disabled="disabled" selected="selected" value="null">Выберите пол</option>
             <option value="male"
                     class="option1" <?php if ($infoUser['gender'] == 'male') echo 'selected = "selected"'; ?>>Мужской
             </option>
