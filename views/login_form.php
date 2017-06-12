@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>CSS</title>
+  <script async src="/../public/js/validate_login_form.js"></script>
   <link href='/../public/css/style_login_form.css' rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -10,7 +11,7 @@
     <div id="Login_header">
         <div id="image">
             <img src="../public/images/logo.png" alt="logo">
-            <form name="test" action="" method="POST">
+            <form action="" method="POST" onSubmit="return validate(this)">
                 <input class="inputs" type="text" name="email" placeholder="Email"><br>
                 <input class="inputs" type="text" name="pass" placeholder="Пароль"><br>
                 <input id="submit" type="submit" name="login" value="Войти">

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Моя информация</title>
+    <script async src="/../public/js/validate_myinfo_edit_form.js"></script>
     <link href='/../public/css/style_myinfo_form.css' rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -22,10 +23,11 @@
 </div>
 <header>Моя информация</header>
 <div id="main">
-    <form name="test" action="" method="POST">
-        <input class="inputs" type="text" name="name" placeholder="Имя" value="<?php echo $infoUser['name'] ?>"><br>
+    <form name="test" action="" method="POST" onSubmit="return validate(this)">
+        <input class="inputs" type="text" name="name" placeholder="Имя"
+                value="<?php echo $infoUser['name'] ?>"><br>
         <input class="inputs" type="text" name="surname" placeholder="Фамилия"
-               value="<?php echo $infoUser['surname'] ?>"><br>
+               value="<?php echo $infoUser['surname']?>"><br>
         <select name="gender" required="required">
             <option style="color:gray" disabled="disabled" selected="selected" value="null">Выбериет пол</option>
             <option value="male"
