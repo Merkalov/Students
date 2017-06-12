@@ -13,7 +13,7 @@ define('ROOT', dirname(__FILE__));
 require_once(ROOT . '\vendor\autoload.php');
 
 //Подключение файла конфига БД
-require_once (ROOT. '\config\Database.php');
+require_once(ROOT . '\config\Database.php');
 
 //Вызов FrontController
 use Controllers\FrontController;
